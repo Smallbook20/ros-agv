@@ -1,0 +1,5 @@
+int64 scoreA
+int64 scoreB
+int64 scoreC
+---
+float64 averageScore
