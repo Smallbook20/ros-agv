@@ -5,7 +5,7 @@
 void chatterCallback(const beginner_tutorials::student::ConstPtr& msg)
 {
   float studentScore = (msg->scoreA + msg->scoreB + msg->scoreC) / 3;
-  ROS_INFO("Diem trung binh: [%f]", studentScore);
+  ROS_INFO("Diem trung binh: %f", studentScore);
 }
 
 int main(int argc, char **argv)

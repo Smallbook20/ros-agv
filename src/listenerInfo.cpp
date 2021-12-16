@@ -4,9 +4,9 @@
 
 void chatterCallback(const beginner_tutorials::student::ConstPtr& msg)
 {
-  ROS_INFO("Mssv: [%s]", msg->studentId.c_str());
-  ROS_INFO("Ho va Ten: [%s]", msg->fullName.c_str());
-  ROS_INFO("Lop: [%s] \n", msg->grade.c_str());
+  ROS_INFO("Mssv: %s", msg->studentId.c_str());
+  ROS_INFO("Ho va Ten: %s", msg->fullName.c_str());
+  ROS_INFO("Lop: %s \n", msg->grade.c_str());
 }
 
 int main(int argc, char **argv)

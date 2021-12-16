@@ -55,9 +55,11 @@ void speed(const beginner_tutorials::irSensor::ConstPtr& msg) {
     if (msg->barrier == 1) {
         stop();
     }
+    ROS_INFO("Left Speed: %d", leftSpeed);
+    ROS_INFO("Right Speed: %d", rightSpeed);
 }
 void locationMap(const beginner_tutorials::locationMap::ConstPtr& msg) {
-    ROS_INFO("Hello");
+    ROS_INFO(" Location: %s",  msg->locationMap.c_str());
 }
 
 int main(int argc, char **argv)
@@ -65,7 +67,7 @@ int main(int argc, char **argv)
 
   ros::init(argc, argv, "motor");
   ros::NodeHandle n;
-  ros::Subscriber sub_ir_signal = n.subscribe("send_ir_signal", 1000, speed);
+  ros::Subscriber sub_ir_signal = n.subscribe("send_ir_signal", 2000, speed);
   ros::Subscriber sub_location = n.subscribe("send_location", 1000,locationMap );
   ros::spin();
 
