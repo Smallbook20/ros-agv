@@ -50,16 +50,15 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 add_message_files(
   FILES
-  student.msg
   irSensor.msg
   locationMap.msg
+  press.msg
 )
 
 ## Generate services in the 'srv' folder
- add_service_files(
-   FILES
-   AverageScore.srv
-)
+# add_service_files(
+#   FILES
+#)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -208,26 +207,6 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(talker src/talker.cpp)
-target_link_libraries(talker ${catkin_LIBRARIES})
-add_dependencies(talker beginner_tutorials_generate_messages_cpp)
-
-add_executable(listenerInfo src/listenerInfo.cpp)
-target_link_libraries(listenerInfo ${catkin_LIBRARIES})
-add_dependencies(listenerInfo beginner_tutorials_generate_messages_cpp)
-
-add_executable(listenerScore src/listenerScore.cpp)
-target_link_libraries(listenerScore ${catkin_LIBRARIES})
-add_dependencies(listenerScore beginner_tutorials_generate_messages_cpp)
-
-add_executable(cal_average_score_server src/cal_average_score_server.cpp)
-target_link_libraries(cal_average_score_server ${catkin_LIBRARIES})
-add_dependencies(cal_average_score_server beginner_tutorials_gencpp)
-
-add_executable(cal_average_score_client src/cal_average_score_client.cpp)
-target_link_libraries(cal_average_score_client ${catkin_LIBRARIES})
-add_dependencies(cal_average_score_client beginner_tutorials_gencpp)
-
 add_executable(irSensor src/irSensor.cpp)
 target_link_libraries(irSensor ${catkin_LIBRARIES})
 add_dependencies(irSensor beginner_tutorials_generate_messages_cpp)
@@ -243,3 +222,8 @@ add_dependencies(locationMap beginner_tutorials_generate_messages_cpp)
 add_executable(alert src/alert.cpp)
 target_link_libraries(alert ${catkin_LIBRARIES})
 add_dependencies(alert beginner_tutorials_generate_messages_cpp)
+
+add_executable(press src/press.cpp)
+target_link_libraries(press ${catkin_LIBRARIES})
+add_dependencies(press beginner_tutorials_generate_messages_cpp)
+

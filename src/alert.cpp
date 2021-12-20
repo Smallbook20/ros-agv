@@ -1,10 +1,18 @@
 #include "ros/ros.h"
 #include "beginner_tutorials/irSensor.h"
 
+void checkBarrier(std::string irSensor) {
+    if (irSensor.compare(5, 1, "1") == 0) {
+        ROS_INFO("We have a barrier, AGV is temporary stop");
+    } else {
+    ROS_INFO("No barrier, AGV is active");
+  }
+    
+}
 
 void alert(const beginner_tutorials::irSensor::ConstPtr& msg)
 {
-  ROS_INFO("barrier: [%d]", msg->barrier);
+  checkBarrier(msg->irSensor.c_str());
 }
 
 int main(int argc, char **argv)
