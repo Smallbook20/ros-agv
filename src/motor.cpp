@@ -71,8 +71,19 @@ void speed(const beginner_tutorials::irSensor::ConstPtr& msg) {
     ROS_INFO("Left Speed: %d", leftSpeed);
     ROS_INFO("Right Speed: %d", rightSpeed);
 }
+void calDirection (std::string location) {
+    if (location.compare("A1") == 0){
+        ROS_INFO("Direction: F R L");
+    }
+    else if (location.compare("B1") == 0) {
+        ROS_INFO("Direction: F L R F");
+    }
+}
+
 void locationMap(const beginner_tutorials::locationMap::ConstPtr& msg) {
     ROS_INFO(" Location: %s",  msg->locationMap.c_str());
+    calDirection(msg->locationMap.c_str());
+    
 }
 
 void pressKeyBoard(const beginner_tutorials::press::ConstPtr& msg) {
